@@ -13,3 +13,25 @@ export const getData = () => {
     // console.log(allProducts);
   }
 };
+
+export const formatDate = (inputDate) => {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const [yyyy, mm, dd] = inputDate.split("-");
+  const month = months[parseInt(mm, 10) - 1];
+
+  return `${month} ${dd}, ${yyyy}`;
+};

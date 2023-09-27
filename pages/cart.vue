@@ -6,9 +6,9 @@
       <div
         v-for="(product, index) in getCartProducts"
         :key="index"
-        class="mb-4"
+        class="mb-4 mt-5"
       >
-        <ProductCard :product="product.item.item" />
+        <ProductCard :product="product.item" />
       </div>
       <h2>Total cart value: {{ total() }}</h2>
     </div>
@@ -25,10 +25,9 @@ const total = () => {
   const totalValue = ref(0);
   for (let i = 0; i < getCartProducts.length; i++) {
     totalValue.value +=
-      getCartProducts[i].item.item.count * getCartProducts[i].item.item.price;
+      getCartProducts[i].item.count * getCartProducts[i].item.price;
   }
   return totalValue;
 };
 </script>
-
 <style lang="scss" scoped></style>
