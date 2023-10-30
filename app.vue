@@ -68,14 +68,12 @@
 <script setup>
 const values = reactive([]);
 let filter = null;
-if (values) {
-  filter = {
-    yearly_quarter: {
-      _in: values,
-      // _in: ["Jan-Mar", "Apr-Jun", "Jul-Sep", "Oct-Dec"],
-    },
-  };
-}
+filter = {
+  yearly_quarter: {
+    _in: values,
+    // _in: ["Jan-Mar", "Apr-Jun", "Jul-Sep", "Oct-Dec"],
+  },
+};
 
 const { getItems } = useDirectusItems();
 const { data } = await useAsyncData(
